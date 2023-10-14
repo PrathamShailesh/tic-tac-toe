@@ -10,6 +10,26 @@
     
 }
 
+/* .container{
+    background-image: url("https://mcdn.wallpapersafari.com/medium/67/15/nI6VPO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(100px);
+} */
+.container::before {
+    content: "";
+    background-image: url("https://mcdn.wallpapersafari.com/medium/67/15/nI6VPO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px); /* Adjust the blur value as needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 
 :root {
     --cell--size:100px;
@@ -19,6 +39,7 @@
 body{
     margin: 0;
     text-align: center;
+    color: #fff;
 }
 .board {
     width: 100vw;
@@ -35,7 +56,7 @@ body{
 .cell {
     width: var(--cell--size);
     height: var(--cell--size);
-    border: 3px rgb(0, 0, 0) solid;
+    border: 3px #D3A807 solid;
     display: flex;
     justify-content:center ;
     align-items: center;
@@ -73,7 +94,7 @@ body{
 }
 .cell.x::after,
 .cell.x::before {
-    background-color: black;
+    background-color: red;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -113,7 +134,7 @@ body{
 }
 .cell.circle::after,
 .cell.circle::before {
-    background-color: black;
+    background-color: gray;
 }
 
 .board.circle .cell:not(.x):not(.circle):hover::after,
@@ -131,7 +152,7 @@ body{
     {
     width: calc(var(--mark--size) * .7);
     height: calc(var(--mark--size)* .7);
-    background-color: rgb(255, 255, 255);
+    background-color: #222222;
 }
 
 .winning-message{
